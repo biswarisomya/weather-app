@@ -8,9 +8,9 @@ import {
     IWeather,
 } from '../types'
 
-const BASE_URl = 'https://weatherapi-com.p.rapidapi.com'
+const BASE_URl = process.env.REACT_APP_SERVICE_URL
 const headers = {
-    'X-RapidAPI-Key': '6dbd64ec1bmshf41240f479676d1p1f43e7jsnfee48f44cc1d',
+    'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
     'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
 }
 
