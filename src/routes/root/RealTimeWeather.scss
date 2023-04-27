@@ -1,0 +1,194 @@
+.RealTimeWeather {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+
+    gap: 1rem;
+    border-radius: 5px;
+
+
+    &-main {
+        display: flex;
+        gap: 1rem;
+        flex-direction: row-reverse;
+
+        background-color: floralwhite;
+
+        &-left {
+
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+
+            &-heading {
+                font-weight: 500;
+                flex-basis: 100%;
+                text-transform: uppercase;
+                font-size: 16px;
+                line-height: 1.5;
+                font-family: solis;
+            }
+
+            &-date {
+                flex-basis: 100%;
+                font-size: 14px;
+                line-height: 1.43;
+                font-weight: 700;
+                opacity: 0.6;
+                font-family: solis;
+            }
+
+            &-image {
+                flex-basis: 40%;
+            }
+
+            &-temp {
+
+
+                flex-basis: 40%;
+
+                &-f {
+                    span {
+                        text-transform: lowercase;
+                    }
+
+                    :first-child {
+                        font-size: 40px;
+                    }
+
+                    :last-child {
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+                }
+
+                &-c {
+                    span {
+                        text-transform: lowercase;
+                    }
+
+                    :first-child {
+                        font-size: 40px;
+                    }
+
+                    :last-child {
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+
+                }
+
+                // :nth-child(1), :nth-child(2) {
+                //    :first-child{
+                //        font-size: 40px;
+                //    }
+                //    :nth-child(2){
+                //        font-size: 18px;
+                //        text-transform: capitalize;
+                //    }
+                //}
+            }
+
+            &-text {
+                flex-basis: 100%;
+                font-size: 18px;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+        }
+
+        &-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-transform: capitalize;
+            padding: 1.5rem 2rem;
+            font-size: 16px;
+            font-family: solis;
+
+            > div {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid lightgrey;
+            }
+
+            :last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    &-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-transform: capitalize;
+        padding: 1.5rem 2rem;
+        font-size: 16px;
+        font-family: solis;
+
+        > div {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        :last-child {
+            border-bottom: none;
+        }
+    }
+}
+@media only screen and (max-width: 640px) {
+    .RealTimeWeather {
+        margin: 1rem;
+        overflow:scroll;
+        height:30rem;
+
+        &-main{
+
+            &-left{
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    padding-bottom:20px;
+
+                    :first-child{
+                        font-weight: 700;
+                    }
+                }
+
+            }
+            &-right{
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    padding-bottom:20px;
+
+                    :first-child{
+                        font-weight: 700;
+                    }
+                }
+
+            }
+        }
+        &-details {
+            > div {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding-bottom:20px;
+
+                :first-child{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
