@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+.app {
+    display: grid;
+    //background-image: url("images/backgroundimage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    grid-template-columns: 1fr 7fr;
+    grid-template-rows: 100px;
+    grid-template-areas:
+        'header header'
+        'sidebar main';
+    //max-height: 100vh;
+    //overflow: visible;
+    &-header {
+        grid-area: header;
+
+
+    }
+    &-sidebar {
+        grid-area: sidebar;
+
+    }
+    &-main {
+        grid-area: main;
+       //overflow: scroll;
+       // max-height: 500px;
+
+
+        &-text{
+            font-weight:bold;
+            font-family: solis;
+            font-size: large;
+            display: flex;
+          margin-left: 2rem;
+
+        }
+
+        &-loader{
+            display: flex;
+            margin-left: 2rem;
+        }
+
+
+    }
+}
+/* Extra small devices (phones, 640px and down) */
+@media only screen and (max-width: 640px) {
+    .app {
+        grid-template-rows: 200px;
+
+        grid-template-areas:
+        'header header'
+        'main main';
+
+        &-sidebar {
+            display: none;
+        }
+
+        &-main{
+            &-text{
+                font-weight:bold;
+                font-family: solis;
+                font-size: large;
+                //display: flex;
+                margin-left: 1rem;
+
+
+            }
+
+        }
+    }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+//@media only screen and (max-width: 640px) {
+//    .app {
+//
+//        grid-template-areas:
+//        'header header'
+//        'main main';
+//        &-sidebar {
+//            display: none;
+//        }
+//    }
+//}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

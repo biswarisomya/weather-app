@@ -1,0 +1,84 @@
+.Astronomy {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 3rem;
+  gap:1rem;
+  border-radius: 5px;
+
+
+  &-bottom {
+    background-color: floralwhite;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-transform: capitalize;
+    padding: 1.5rem 1rem;
+    font-size: 16px;
+    font-family: solis;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid lightgrey;
+
+    }
+    :last-child {
+      border-bottom: none;
+    }
+  }
+  &-top {
+    background-color: floralwhite;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-transform: capitalize;
+    padding: 1.5rem 1rem;
+    font-size: 16px;
+    font-family: solis;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid lightgrey;
+
+    }
+    :last-child {
+      border-bottom: none;
+    }
+  }
+
+
+
+}
+
+@media only screen and (max-width: 640px) {
+  .Astronomy {
+    margin: 1rem;
+    height: 30rem;
+    overflow:scroll;
+    //overflow:hidden;
+    //z-index: 100;    //overflow:hidden;
+    //z-index: 100;
+    &-top {
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-bottom:20px;
+        :first-child{
+          font-weight: 700;
+        }
+      }
+    }
+    &-bottom {
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-bottom:20px;
+        :first-child{
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+

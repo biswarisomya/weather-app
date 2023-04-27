@@ -6,14 +6,14 @@ import {
     Dispatch,
     SetStateAction,
 } from 'react'
-import { ILocation } from '../api'
+import { ILocation } from '../types'
 
 interface LocationContextProps {
     location: ILocation | null
     setLocation: Dispatch<SetStateAction<ILocation | null>>
 }
 
-const CityContext = createContext<LocationContextProps>({
+const LocationContext = createContext<LocationContextProps>({
     location: null,
     setLocation: (prevState: SetStateAction<ILocation | null>) => prevState,
 })
@@ -30,9 +30,13 @@ function LocationProvider({ children }: LocationProviderProps) {
         [location, setLocation]
     )
 
-    return <CityContext.Provider value={value}>{children}</CityContext.Provider>
+    return (
+        <LocationContext.Provider value={value}>
+            {children}
+        </LocationContext.Provider>
+    )
 }
 
-const useLocation = () => useContext(CityContext)
+const useLocation = () => useContext(LocationContext)
 
 export { LocationProvider, useLocation }
