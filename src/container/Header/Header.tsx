@@ -87,6 +87,7 @@ const Header = () => {
                         disablePortal
                         id="combo-box-demo"
                         options={options}
+                        noOptionsText="Loading..."
                         autoHighlight
                         onInputChange={handleInputChange}
                         onChange={(event: any, newValue: ILocation | null) => {
