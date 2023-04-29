@@ -17,6 +17,7 @@ const Header = () => {
     const { setLocation } = useLocation()
     const loc = useLoc()
     const [options, setOptions] = useState<ILocation[]>([])
+    const [isLoading, setIsLoading] = useState(false)
     // const [ipInput, setIpInput] = useState('')
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const data = [
@@ -63,10 +64,12 @@ const Header = () => {
             return
         }
         try {
-            console.log('value', value)
+            setIsLoading(true)
             const { data } = await getCity(value)
+            setIsLoading(false)
             setOptions(data)
         } catch (e: any) {
+            setIsLoading(false)
             alert('Error in autocomplete api')
         }
     }, 500)
@@ -87,7 +90,9 @@ const Header = () => {
                         disablePortal
                         id="combo-box-demo"
                         options={options}
-                        noOptionsText=""
+                        noOptionsText="Please enter the valid city name "
+                        loadingText="Loading..."
+                        loading={isLoading}
                         autoHighlight
                         onInputChange={handleInputChange}
                         onChange={(event: any, newValue: ILocation | null) => {
